@@ -1,0 +1,25 @@
+.text_homePage{
+    display: flex;           /* Включает Flexbox */
+    justify-content: center;  /* Центрирование по горизонтали */
+    align-items: center;      /* Центрирование по вертикали */
+    margin: 0;                /* Убирает стандартные отступы */
+    font-size: 4rem;          /* Увеличенный размер шрифта (например, 2 rem) */
+    text-align: center;
+    padding-right: auto;
+    padding-top: 40px;
+}
+.fade-in {
+    opacity: 0;                /* Изначально текст невидим */
+    animation: fadeInEffect 1.5s ease-in forwards; /* Анимация появления */
+}
+
+@keyframes fadeInEffect {
+    0% {
+        opacity: 0;            /* Начало: текст полностью прозрачный */
+        transform: translateY(20px); /* Легкий сдвиг вниз */
+    }
+    100% {
+        opacity: 1;            /* Конец: текст полностью видим */
+        transform: translateY(0); /* Позиция по умолчанию */
+    }
+}

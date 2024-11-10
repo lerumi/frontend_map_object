@@ -1,0 +1,16 @@
+.background {
+ background-color: rgba(153, 153, 153, 1);
+ }
+
+li a:hover:not(.active) {
+  color: rgba(102, 102, 102, 1);
+}
+.cl-item{
+  color: white;
+  text-transform: uppercase;
+  font-family: Verdana;
+  font-size: 0.9vw;
+}
+.shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
