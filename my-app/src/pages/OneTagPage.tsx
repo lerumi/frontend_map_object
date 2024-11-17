@@ -1,11 +1,8 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ROUTES, ROUTE_LABELS } from "../Routes.tsx";
-import NavBar from '../components/NavBar.tsx'
 import { FC, useEffect, useState} from 'react'
 import { Col, Row, Spinner, Image } from 'react-bootstrap'
-import TagCard from '../components/Card.tsx'
 import { Tag, getTagById } from '../modules/TagsApi.tsx'
-import InputField from '../components/InputField.tsx'
 import './OneTagPage.css'
 import { BreadCrumbs } from "../components/BreadCrumbs";
 import { TAGS_MOCK } from "../modules/mock.tsx";
@@ -22,7 +19,6 @@ export const OneTagPage: FC = () => {
         if(results.length == 0)
         {
             setPageData(TAGS_MOCK.results[id-1])
-
         }
         else
         {
@@ -30,17 +26,13 @@ export const OneTagPage: FC = () => {
             setPageData(results)
         }
 
+
     }
     result();
   }, [id]);
 
   return (
     <div>
-         <NavBar
-            Home={ROUTES.HOME}
-            Tags={ROUTES.TAGS}
-         />
-
       {pageData ? ( // проверка на наличие данных, иначе загрузка
       <div className = "background_sub">
 

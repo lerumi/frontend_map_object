@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import { ROUTES, ROUTE_LABELS } from "../Routes.tsx";
-import NavBar from '../components/NavBar.tsx'
 import { FC, useState, useEffect} from 'react'
 import { Col, Row, Spinner } from 'react-bootstrap'
 import TagCard from '../components/Card.tsx'
@@ -19,13 +17,16 @@ export const TagList: FC = () => {
         const fetchAllTags = async () => {
             setLoading(true);
             const { results } = await getTags('');
+            console.log(results)
             if(results.length == 0)
             {
+
                 setTag(
                   TAGS_MOCK.results.filter((item) =>
                     item.tag_name.toLocaleLowerCase().startsWith(searchValue.toLocaleLowerCase()))
                     )
             }
+
             else
             {
                 setTag(results.filter(item => item.tag_status == true))
@@ -40,6 +41,7 @@ export const TagList: FC = () => {
         setLoading(true)
         console.log(searchValue)
         const { results } = await getTags(searchValue)
+        console.log(results)
         if(results.length == 0)
         {
             setTag(
@@ -61,10 +63,6 @@ export const TagList: FC = () => {
 
       return (
         <>
-            <NavBar
-                Home={ROUTES.HOME}
-                Tags={ROUTES.TAGS}
-            />
             <div className={`container ${loading && 'containerLoading'}`}>
                 {loading && <div className="loadingBg"><Spinner animation="border" />
                 </div>}

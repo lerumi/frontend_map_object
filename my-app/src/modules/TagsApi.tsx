@@ -1,25 +1,25 @@
 
 export interface Tag {
-   id: string
+   id: number
    tag_name: string
    tag_description: string
    tag_image: string
-   tag_status: string
+   tag_status: boolean
 }
 
 export interface TagsResult {
     resultCount: number
     results: Tag[]
 }
+
 export const getTags = async (name = ''): Promise<TagsResult> =>{
-const url = name ? `/api/tags/?search_tag=${name}` : `/api/tags`;
+const url = name ? `http://localhost:3000/api/tags/?search_tag=${name}` : `http://localhost:3000/api/tags`;
     try {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-
         return {
             resultCount: data.tags ? data.tags.length : 0,
             results: data.tags || [],
@@ -31,7 +31,7 @@ const url = name ? `/api/tags/?search_tag=${name}` : `/api/tags`;
 
 }
 export const getTagById = async (id: number | string): Promise<TagsResult> =>{
-    const url = `/api/tag/${id}`;
+    const url = `http://localhost:3000/api/tag/${id}`;
     try {
         const response = await fetch(url);
         if (!response.ok) {

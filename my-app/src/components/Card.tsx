@@ -3,15 +3,15 @@ import { Button, Card } from 'react-bootstrap'
 import './Card.css'
 import image from "../assets/DefaultImage.png";
 interface Props {
-   id: string
+   id: number
    tag_name: string
    tag_description: string
    tag_image: string
-   tag_status: string
+   tag_status: boolean
    imageClickHandler: () => void
 }
 
-const TagCard: FC<Props> = ({ tag_image, tag_name,  id, tag_description, tag_status, imageClickHandler}) => (
+const TagCard: FC<Props> = ({ tag_image, tag_name, imageClickHandler}) => (
     <Card className="card">
         <Card.Img className="image cardImage" variant="top" src={tag_image.includes('nan')? image : tag_image} height={100} width={100}  />
         <Card.Body>

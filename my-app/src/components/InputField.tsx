@@ -12,7 +12,7 @@ interface Props {
     buttonTitle?: string
 }
 
-const InputField: FC<Props> = ({ value, setValue, onSubmit, loading, placeholder, buttonTitle = 'Искать' }) => (
+const InputField: FC<Props> = ({ value, setValue, onSubmit, loading, placeholder}) => (
     <div className="inputField">
         <input value={value} placeholder={placeholder} onChange={(event => setValue(event.target.value))}/>
         <Button className="search_btn" disabled={loading} onClick={onSubmit}><img src={searchIcon} className="icon" /> </Button>

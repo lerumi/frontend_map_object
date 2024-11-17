@@ -14,3 +14,8 @@ li a:hover:not(.active) {
 .shadow{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.navbar {
+    --bs-navbar-padding-y: 0rem;
+    --bs-navbar-brand-margin-end: 0rem;
+    --bs-navbar-nav-link-padding-x: 0.8rem;
+}
