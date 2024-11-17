@@ -1,0 +1,15 @@
+{
+    "name": "MapObject",
+    "short_name": "MapObj",
+    "start_url": "/frontend_map_object",
+    "display": "standalone",
+    "background_color": "#fdfdfd",
+    "theme_color": "#db4938",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/frontend_map_object/logo_map.png",
+        "type": "image/png", "sizes": "192x192"
+      }
+    ]
+  }
