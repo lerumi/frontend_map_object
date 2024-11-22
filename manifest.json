@@ -8,7 +8,7 @@
     "orientation": "portrait-primary",
     "icons": [
       {
-        "src": "/logo_map.svg",
+        "src": "/frontend_map_object/logo_map.svg",
         "type": "image/svg", "sizes": "192x192"
       }
     ]
