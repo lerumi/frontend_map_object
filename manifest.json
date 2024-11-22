@@ -8,8 +8,8 @@
     "orientation": "portrait-primary",
     "icons": [
       {
-        "src": "/frontend_map_object/logo_map.png",
-        "type": "image/png", "sizes": "192x192"
+        "src": "/logo_map.svg",
+        "type": "image/svg", "sizes": "192x192"
       }
     ]
-  }
+}
