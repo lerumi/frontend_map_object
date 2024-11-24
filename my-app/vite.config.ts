@@ -6,12 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: "/frontend_map_object",
   server: {
-    proxy: {
-        "/api": {
-            target: "http://localhost:8000",
-            changeOrigin: true,
-      },
-    },
+
     port: 3000
   },
 });

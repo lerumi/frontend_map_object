@@ -6,7 +6,8 @@
     font-size: 4rem;          /* Увеличенный размер шрифта (например, 2 rem) */
     text-align: center;
     padding-right: auto;
-    padding-top: 80px;
+    padding-top: auto;
+    padding-bottom: auto;
 }
 .fade-in {
     opacity: 0;                /* Изначально текст невидим */
