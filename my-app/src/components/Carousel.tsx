@@ -2,6 +2,7 @@ import { Carousel } from 'react-bootstrap';
 import img1 from "../assets/1.png";
 import img2 from "../assets/2.png";
 import img3 from "../assets/3.png";
+import"./Carousel.css"
 const images = [
   { src: img1, description: 'Создавайте и редактируйте новые объекты карты.' },
   { src: img2, description: 'Добавляйте подходящие теги и описания.' },
@@ -15,13 +16,13 @@ export const CarouselComp = () => {
       {images.map((image, index) => (
         <Carousel.Item key={index}>
           <img
-            className="d-block w-100"
+            className="d-block w-100 carouselHeight"
             src={image.src}
             alt={`Slide ${index + 1}`}
-            style={{ height: '800px',objectFit: 'cover' }}
+
           />
           <Carousel.Caption>
-            <p>{image.description}</p>
+            <p className="carImDesc">{image.description}</p>
           </Carousel.Caption>
         </Carousel.Item>
       ))}

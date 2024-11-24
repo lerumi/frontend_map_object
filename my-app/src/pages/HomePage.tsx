@@ -4,7 +4,7 @@ import { CarouselComp } from '../components/Carousel.tsx';
 export const HomePage: FC = () => {
   return (
 
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '50px' }}>
+    <div className = "homeBack" style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
 
       <div style={{ width: '100%' }}>
         <CarouselComp />

@@ -7,46 +7,27 @@ import InputField from '../components/InputField.tsx'
 import { useNavigate } from "react-router-dom";
 import { BreadCrumbs } from "../components/BreadCrumbs";
 import { TAGS_MOCK } from "../modules/mock.tsx";
-
+import './Tags.css'
+import {useData, setDataAction} from "../slices/dataSlice";
+import {useDispatch} from "react-redux";
 export const TagList: FC = () => {
-    const [searchValue, setSearchValue] = useState('')
+    //const [searchValue, setSearchValue] = useState('')
     const [loading, setLoading] = useState(false)
     const [tags, setTag] = useState<Tag[]>([])
     const navigate = useNavigate();
-    useEffect(() => {
-        const fetchAllTags = async () => {
-            setLoading(true);
-            const { results } = await getTags('');
-            console.log(results)
-            if(results.length == 0)
-            {
-
-                setTag(
-                  TAGS_MOCK.results.filter((item) =>
-                    item.tag_name.toLocaleLowerCase().startsWith(searchValue.toLocaleLowerCase()))
-                    )
-            }
-
-            else
-            {
-                setTag(results.filter(item => item.tag_status == true))
-            }
-            setLoading(false)
-        };
-
-        fetchAllTags();
-    }, []);
+    const dispatch = useDispatch()
+    const searchName = useData()
 
     const handleSearch = async () =>{
         setLoading(true)
-        console.log(searchValue)
-        const { results } = await getTags(searchValue)
+        console.log(searchName)
+        const { results } = await getTags(searchName)
         console.log(results)
         if(results.length == 0)
         {
             setTag(
               TAGS_MOCK.results.filter((item) =>
-                item.tag_name.toLocaleLowerCase().startsWith(searchValue.toLocaleLowerCase()))
+                item.tag_name.toLocaleLowerCase().startsWith(searchName.toLocaleLowerCase()))
                 )
             setLoading(false)
         }
@@ -55,8 +36,13 @@ export const TagList: FC = () => {
             setTag(results.filter(item => item.tag_status == true))
             setLoading(false)
         }
+        dispatch(setDataAction(searchName))
 
     }
+
+    useEffect(() => {
+        handleSearch()
+    }, [])
     const handleCardClick = (id: number) => {
         navigate(`${ROUTES.TAG}/${id}`);
     };
@@ -68,8 +54,8 @@ export const TagList: FC = () => {
                 </div>}
                 <BreadCrumbs crumbs={[{ label: ROUTE_LABELS.TAGS }]} />
                 <InputField
-                    value={searchValue}
-                    setValue={(value) => setSearchValue(value)}
+                    value={searchName}
+                    setValue={(value) => dispatch(setDataAction(value))}
                     loading={loading}
                     onSubmit={handleSearch}
                 />
@@ -79,9 +65,9 @@ export const TagList: FC = () => {
                     </div>
                 }
 
-                <Row xs={4} md={4} className="g-4">
+                <div className="cards__wrapper">
                     {tags.map((item, index) => (
-                        <Col key={index}>
+
                                 <TagCard
                                     id={item.id}
                                     tag_name={item.tag_name}
@@ -90,10 +76,9 @@ export const TagList: FC = () => {
                                     tag_status={item.tag_status}
                                     imageClickHandler={() => handleCardClick(item.id)}
                                 />
-                            </Col>
 
                     ))}
-                </Row>
+                </div>
             </div>
         </>
     )

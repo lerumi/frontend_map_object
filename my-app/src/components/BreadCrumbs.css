@@ -27,3 +27,8 @@
 .breadcrumbs li:last-child {
   color: var(--active_color);
 }
+@media (max-width: 460px) {
+    .breadcrumbs {
+        font-size: 5vw;
+    }
+}

@@ -13,7 +13,7 @@ interface Props {
 
 const TagCard: FC<Props> = ({ tag_image, tag_name, imageClickHandler}) => (
     <Card className="card">
-        <Card.Img className="image cardImage" variant="top" src={tag_image.includes('nan')? image : tag_image} height={100} width={100}  />
+        <Card.Img className="image cardImage" variant="top" src={tag_image.includes('nan')? image : tag_image}   />
         <Card.Body>
             <div className="textStyle">
                 <Card.Title>{tag_name}</Card.Title>

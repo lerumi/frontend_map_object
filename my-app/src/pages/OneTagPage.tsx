@@ -50,7 +50,7 @@ export const OneTagPage: FC = () => {
                     className = "image single_tag row-margin"
                   />
                 </Col>
-                <Col md={6}>
+                <Col md={6} >
                   <p className = "title">
                     {pageData.tag_name}
                   </p>

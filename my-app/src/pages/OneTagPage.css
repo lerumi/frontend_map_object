@@ -1,13 +1,13 @@
 .info_sheet_tag{
   height: 100vh;
-  width: 60%;
+  width: 70%;
   margin-left: auto;
   margin-right:auto;
-
   background-color: white;
   opacity:0.9;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 .background_sub{
     background-image: linear-gradient(rgba(153, 153, 153, 1), rgba(230, 230, 230, 1));
@@ -19,16 +19,15 @@
     margin-left: auto;
     margin-right: auto;
     width: 90%;
-    height: 220px;
     border-radius: 10px;
     border: 5px solid rgba(102, 102, 102, 1);
 }
 .image.single_tag{
     width: 90%;
-    height: 300px;
-    margin-left:10%;
+    height: 400px;
+    margin-left:5%;
+    margin-right:5%;
     padding-top: 0;
-    float: left;
 }
 .row-margin{
     margin-top: 1.5%;
@@ -38,9 +37,39 @@
     font-size: 1.5vw;
     font-weight: bold;
     margin-bottom: 1%;
+    margin-left:1%;
+
 }
 .text{
     font-size: 1.2vw;
     font-weight: normal;
     margin-bottom: 1%;
+    margin-left:1%;
+    margin-right:1%;
+}
+@media (max-width: 460px) {
+    .info_sheet_tag{
+          width: 100%;
+    }
+    .row-margin{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px 0
+    }
+
+    .image.single_tag, .card__info {
+        width: 90%;
+        height: 250px;
+    }
+
+    .title{
+        font-size: 24px;
+        margin-left:5%;
+
+    }
+    .text{
+        font-size: 18px;
+        margin-left:5%;
+        margin-right:5%;
+    }
 }

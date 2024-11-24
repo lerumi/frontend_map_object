@@ -4,8 +4,9 @@ import {TagList} from './pages/Tags.tsx'
 import {OneTagPage} from './pages/OneTagPage.tsx'
 import {ROUTES} from './Routes.tsx'
 import NavBar from './components/NavBar.tsx'
-
+import {invoke} from '@tauri-apps/api/core';
 function App() {
+
   return (
     <BrowserRouter basename="/frontend_map_object">
       <NavBar />

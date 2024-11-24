@@ -3,11 +3,11 @@
     justify-content: center;  /* Центрирование по горизонтали */
     align-items: center;      /* Центрирование по вертикали */
     margin: 0;                /* Убирает стандартные отступы */
-    font-size: 4rem;          /* Увеличенный размер шрифта (например, 2 rem) */
+    font-size: 2rem;          /* Увеличенный размер шрифта (например, 2 rem) */
     text-align: center;
     padding-right: auto;
-    padding-top: auto;
-    padding-bottom: auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 .fade-in {
     opacity: 0;                /* Изначально текст невидим */
@@ -23,4 +23,17 @@
         opacity: 1;            /* Конец: текст полностью видим */
         transform: translateY(0); /* Позиция по умолчанию */
     }
+}
+.homeBack{
+      height: 100%;
+}
+@media (max-width: 460px) {
+    .text_homePage{
+        font-size: 2rem;
+        padding-top: 30px;
+    }
+    .homeBack{
+        height: 100vh;
+    }
+
 }

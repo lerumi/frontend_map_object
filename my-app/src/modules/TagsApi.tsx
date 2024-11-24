@@ -13,7 +13,7 @@ export interface TagsResult {
 }
 
 export const getTags = async (name = ''): Promise<TagsResult> =>{
-const url = name ? `http://localhost:3001/api/tags/?search_tag=${name}` : `http://localhost:3001/api/tags`;
+const url = name ? `http://192.168.35.183:3001/api/tags/?search_tag=${name}` : `http://localhost:3001/api/tags`;
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -31,7 +31,7 @@ const url = name ? `http://localhost:3001/api/tags/?search_tag=${name}` : `http:
 
 }
 export const getTagById = async (id: number | string): Promise<TagsResult> =>{
-    const url = `http://localhost:3001/api/tag/${id}`;
+    const url = `http://192.168.35.183:3001/api/tag/${id}`;
     try {
         const response = await fetch(url);
         if (!response.ok) {

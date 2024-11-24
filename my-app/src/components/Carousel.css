@@ -1,0 +1,16 @@
+.carouselHeight{
+    height: 500px;
+    object-fit: cover;
+}
+.carImDesc{
+    font-size: 1.5vw;
+}
+
+@media (max-width: 460px) {
+    .carouselHeight{
+        height: 400px;
+    }
+    .carImDesc{
+        font-size: 2.9vw;
+    }
+}
